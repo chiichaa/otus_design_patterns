@@ -1,9 +1,8 @@
 package ru.chudakov.otus.lesson1;
 
 import java.util.LinkedList;
-import java.util.Queue;
 
-public class OtusStack <T extends OtusString> {
+public class OtusStack<T extends OtusString> {
 
     private final LinkedList<OtusString> stack;
 
@@ -15,8 +14,8 @@ public class OtusStack <T extends OtusString> {
         return stack.add(string);
     }
 
-    public boolean offer(OtusString string) {
-        return stack.offer(string);
+    public void push(OtusString string) {
+        stack.addFirst(string);
     }
 
     public OtusString remove() {
@@ -33,6 +32,10 @@ public class OtusStack <T extends OtusString> {
 
     public boolean isEmpty() {
         return this.stack.isEmpty();
+    }
+
+    public int size() {
+        return this.stack.size();
     }
 
 }
