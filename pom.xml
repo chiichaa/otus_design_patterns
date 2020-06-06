@@ -11,6 +11,7 @@
     <modules>
         <module>lesson_01_oop_or_not_oop</module>
         <module>lesson_02_multithreading</module>
+        <module>lessont_13_singleton</module>
     </modules>
     <properties>
         <maven.compiler.target>1.8</maven.compiler.target>
