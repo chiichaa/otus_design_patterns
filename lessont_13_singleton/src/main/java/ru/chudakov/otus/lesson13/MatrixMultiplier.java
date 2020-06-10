@@ -1,5 +1,8 @@
 package ru.chudakov.otus.lesson13;
 
+import ru.chudakov.otus.lesson13.logger.ILogger;
+import ru.chudakov.otus.lesson13.logger.Logger;
+
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -30,7 +33,7 @@ public class MatrixMultiplier {
 
 class ThreadCounter extends Thread {
 
-    private final Logger logger = Logger.getInstance();
+    private final ILogger ILogger = Logger.getInstance();
 
     private final MatrixMultiplyResultSolver solver;
 
@@ -46,9 +49,9 @@ class ThreadCounter extends Thread {
             counter = solver.getNestCounter();
 
             if (counter != null) {
-                logger.log("start count element[" + counter.getI() + "][" + counter.getJ() + "]");
+                ILogger.log("start count element[" + counter.getI() + "][" + counter.getJ() + "]");
                 counter.count();
-                logger.log("end count element[" + counter.getI() + "][" + counter.getJ() + "]");
+                ILogger.log("end count element[" + counter.getI() + "][" + counter.getJ() + "]");
             }
         } while (counter != null);
 
